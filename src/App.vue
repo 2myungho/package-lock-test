@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <section class="b-tooltips">
+    <b-tooltip label="Text is dashed" dashed> Simple text </b-tooltip>
+
+    <b-tooltip
+      label="Maybe you like a little animation"
+      position="is-bottom"
+      :animated="false"
+    >
+      <b-button label="No animation" />
+    </b-tooltip>
+
+    <b-tooltip label="You prefer dark?" type="is-dark" position="is-bottom">
+      <b-button label="Dark" />
+    </b-tooltip>
+
+    <b-tooltip label="Or light?" type="is-light" position="is-bottom">
+      <b-button label="Light" />
+    </b-tooltip>
+
+    <b-tooltip label="I'm never closing" always>
+      <b-button label="Always" />
+    </b-tooltip>
+
+    <b-tooltip label="I'm square" position="is-bottom" square>
+      <b-button label="Square" />
+    </b-tooltip>
+
+    <b-tooltip
+      label="You love the light variant, dont you?"
+      type="is-primary is-light"
+      position="is-bottom"
+    >
+      <b-button label="Primary light variant" />
+    </b-tooltip>
+  </section>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+<style lang="scss" scoped>
+.b-tooltips {
+  .b-tooltip:not(:last-child) {
+    margin-right: 0.5em;
   }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  .b-tooltip {
+    margin-bottom: 0.5em;
+  }
 }
 </style>
